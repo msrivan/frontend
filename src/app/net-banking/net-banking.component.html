@@ -1,0 +1,105 @@
+<app-menu></app-menu>
+<div class="main-content page-m">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <form [formGroup]="checkoutFormGroup" (ngSubmit)="onSubmit()">
+
+
+    <div formGroupName="netBanking" class="form-area">
+    <h3>Net Banking</h3>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <label>Bank Type</label>
+                </div>
+                <div class="col-md-9">
+                    <div class="form-group">
+                        <select formControlName="bankType" id="" class="form-control">
+                            <option value="Axis">Axis</option>
+                            <option value="ICICI">ICICI</option>
+                            <option value="HDFC">HDFC</option>
+                            <option value="SBI">SBI</option>
+                        </select>
+
+                        <div *ngIf="BankType.invalid && (bankType.dirty || bankType.touched)" class="alert alert-danger mt-1">
+                            <div *ngIf="bankType.errors.required">
+                                bankType is required
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-2">
+                    <label>User name</label>
+                </div>
+                <div class="col-md-9">
+                    <div class="form-group">
+                        <input type="text" formControlName="userName" class="form-control">
+
+                        <div *ngIf="netBankingUserName.invalid && (netBankingUserName.dirty || netBankingUserName.touched)" class="alert alert-danger mt-1">
+                            <div *ngIf="netBankingUserName.errors.required || netBankingUserName.errors.notOnlyWhiteSpaces">
+                                User Name is required
+                            </div>
+                            <div *ngIf="netBankingUserName.errors.minlength">
+                                User Name must be at least 2 characters long.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <label>password</label>
+                </div>
+                <div class="col-md-9">
+                    <div class="form-group">
+                        <input type="text" formControlName="password" class="form-control">
+
+                        <div *ngIf="netBankingPassword.invalid && (netBankingPassword.dirty || netBankingPassword.touched)" class="alert alert-danger mt-1">
+                            <div *ngIf="netBankingPassword.errors.required || netBankingPassword.errors.notOnlyWhiteSpaces">
+                                password is required
+                            </div>
+                            <div *ngIf="netBankingPassword.errors.pattern">
+                                password must be atleast 4 digits long.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+                        <div class="row">
+                            <div class="col-md-2">
+                                <label>Security Code</label>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="form-group">
+                                <input type="text" formControlName="securityCode" class="form-control">
+                                <div *ngIf="netBankingSecurityCode.invalid && (netBankingSecurityCode.dirty || netBankingSecurityCode.touched)" class="alert alert-danger mt-1">
+                                    <div *ngIf="netBankingSecurityCode.errors.required || netBankingSecurityCode.errors.notOnlyWhiteSpaces">
+                                        Security code is required
+                                    </div>
+                                    <div *ngIf="netBankingSecurityCode.errors.pattern">
+                                        Security code must be atleast 3 digits long.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                        <div  class="text-center">
+                <button type="submit" (click)="paymentFunc()" class="btn btn-primary btn-block">Purchase</button>
+                    </div>
+                    </div>
+                </form>
+            </div>
+        
+    </div>
+</div>

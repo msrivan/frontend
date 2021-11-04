@@ -1,0 +1,9 @@
+ body{
+    background-color: hsl(60, 24%, 96%)
+} 
+
+ .example-button-row {
+    display: table-cell;
+    width: 490px;
+  } 
+  

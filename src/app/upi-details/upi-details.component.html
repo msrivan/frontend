@@ -1,0 +1,61 @@
+<app-menu></app-menu>
+<div class="main-content page-m">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+        <form [formGroup]="checkoutFormGroup" (ngSubmit)="onSubmit()">
+
+
+        <div formGroupName="UPI" class="form-area">
+        <h3>UPI</h3>
+
+                <div class="row">
+                    <div class="col-md-2">
+                        <label>phone number</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <input type="text" formControlName="phoneNumber" class="form-control">
+                            <div *ngIf="UPIphoneNumber.invalid && (UPIphoneNumber.dirty || UPIphoneNumber.touched)" class="alert alert-danger mt-1">
+                                <div *ngIf="UPIphoneNumber.errors.required || UPIphoneNumber.errors.notOnlyWhiteSpaces">
+                                    UPI phone Number is required
+                                </div>
+                                <div *ngIf="UPIphoneNumber.errors.minlength">
+                                    phone number must be 10 digits long.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+
+                <div class="row">
+                    <div class="col-md-2">
+                        <label>Enter UPI ID</label>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <input type="text" formControlName="EnterUPIID" class="form-control">
+                                <div *ngIf="UPIEnterUPIIDinvalid && (UPIEnterUPIID.dirty || UPIEnterUPIID.touched)" class="alert alert-danger mt-1">
+                                        <div *ngIf="UPIEnterUPIID.errors.required || UPIEnterUPIID.errors.notOnlyWhiteSpaces">
+                                            UPI ID is required
+                                        </div>
+                                        <div *ngIf="UPIEnterUPIID.errors.pattern">
+                                            UPI ID  typically yourname@bankname.
+                                        </div>
+                                </div>
+
+                        </div>
+                </div>
+                </div>
+
+
+                <div class="text-center">
+                    <button type="submit" (click)="paymentFunc()" class="btn btn-primary btn-block">Purchase</button>
+                </div>
+            </div>
+      </form>
+  </div>
+</div>
+</div>
+

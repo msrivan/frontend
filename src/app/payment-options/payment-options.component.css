@@ -1,0 +1,14 @@
+.tp-radio-group {
+    display: inline-flex;
+    flex-direction: column;
+ }
+ .tp-radio-button {
+    margin: 5px;
+ }
+ .tp-selected-value {
+    margin: 15px 0;
+ }
+ 
+ mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+  }

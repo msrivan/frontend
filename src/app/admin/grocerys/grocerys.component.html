@@ -1,0 +1,29 @@
+<app-menu></app-menu>
+<h1>Grocerys Admin</h1>
+<a class="btn btn-primary mb-3" (click)="addGrocery()">Add New Grocery</a>
+<div class="container row">
+  <div class="col-md-6">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Grocery Name</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let grocery of grocerys">
+          <td>{{grocery.id}}</td>
+          <td>{{grocery.name}}</td>
+          <td>
+            <button type="button" class="btn btn-primary" (click)="viewGrocery(grocery.id)">Show Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <app-addgrocery  *ngIf="action === 'edit' || action === 'add'" [grocery]="selectedGrocery" (groceryAddedEvent)="refreshData()"></app-addgrocery>
+    <app-viewgrocery *ngIf="action === 'view'" [grocery]="selectedGrocery" (groceryDeletedEvent)="refreshData()"></app-viewgrocery>
+  </div>
+</div>

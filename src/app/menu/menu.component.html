@@ -1,0 +1,35 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div><a href="http://localhost:4200/shop" class="navbar-brand">Home</a></div>
+        <ul class="navbar-nav">
+            <!-- <li><a  class="nav-link" routerLink="/shop"  >Shop</a></li> -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Admin
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a routerLink="/admin/users"class="dropdown-item">Users</a>
+                    <a routerLink="/admin/grocerys" class="dropdown-item">Grocery</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Product
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li *ngFor="let grocery of grocerys">
+                        <a (click)="getgrocery(grocery.id)"  class="dropdown-item" >{{grocery.name}}</a>
+                      </li> 
+                </div>
+            </li>
+            
+             
+        </ul>
+        
+    </nav>
+    <div>
+        <button  style="text-align:right" type="login"  style="margin:30px;" round="true" class="btn btn-info btn-lg float-right ml-auto"  (click)="logout()">Logout</button>
+     </div>
+</header>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+   <h1>Bill Payment Details</h1>
+  
+  <h2>Invoice Details</h2>
+  <!-- <div class="printable-content" id="printable-content">
+    <div class="printable-area" id="printable-area"> -->
+  <table class="table table-bordered table-sm">
+    <thead class="table-dark">
+      <tr>
+        <!-- <th>Sr.No.</th> -->
+        <th>Name</th>
+        <!-- ss -->
+        <!-- <th>Description</th> -->
+        <th>UnitPrice</th>
+        <th> Qty</th>
+        <th>Amount</th>
+        <!-- <th>Gross Total(RS)</th>
+        <th>Net Total</th> -->
+      </tr>
+      
+    </thead>
+   <tbody *ngFor="let tempCartItem of cartItems" class="tbody">
+    <tr >
+        <!-- <td>{{bill.serialno_id}}</td> -->
+        <td>{{ tempCartItem.name }}</td>
+        <!-- <td>{{bill.bill_address}}</td> -->
+        <!-- <td>{{bill.bill_description}}</td> -->
+        <td>{{ tempCartItem.price | currency: 'Rs ' }} </td>
+        <td>{{ tempCartItem.quantity }}</td>
+        <td>{{ tempCartItem.quantity * tempCartItem.price | currency: 'Rs ' }}</td>
+        <!-- <td>{{bill.bill_grandtotal}}</td>
+        <td>{{bill.bill_nettotal}}</td> -->
+       </tr>
+      
+   </tbody>
+    
+  </table>
+  <h3 *ngFor="let bill of bills">
+    Gross Total(RS):{{bill.bill_grandtotal}}
+  </h3>
+  <!-- <table class="table table-bordered table-sm">
+    <tr>
+      <td width="75%">Gross Total(RS):{{bill.bill_grandtotal}}</td>
+    </tr>
+  </table> -->
+    <!-- </div>
+  </div>
+   -->
+  </div>
+</body>
+</html>
+
+
+
+
+

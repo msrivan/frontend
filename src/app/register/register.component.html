@@ -1,0 +1,77 @@
+
+<!-- <router-outlet></router-outlet>   -->
+<br>
+<div class="row">
+   <div class="col-sm-12">
+      <div class="col align-self-center">
+         <div class="card border-primary" >
+      <div class="card-body" style="text-align:center">
+         <div class="card text-center">
+              <h1 class="card-title">Registration</h1>
+         </div>
+      </div>
+   </div>
+   </div>
+   </div>
+</div>
+
+<br>
+
+<div>
+   <!-- <div class="col-sm-7 col-sm-9">
+      <div class="col align-self-center">
+         <div class="card border-primary" >
+      <div class="card-body"  style="text-align:center" >
+         <div class="card text-center"> -->
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()" >
+  
+      <div style="text-align:center" class="form-group">
+        <label  for="firstName" style="margin:10px;">
+           Firstname
+         </label>
+          <input type="text" name="firstname" formControlName="firstname" ngModule="register1.firstname"  id="firstname"  placeholder="Firstname" required=""/>
+      <!-- </div>
+      <div style="text-align:center" class="form-group"> -->
+          <label  for="lastName" style="margin:10px;">
+           Lastname
+        </label>
+           <input type="text" name="lastname" formControlName="lastname" ngModule="register1.lastname"  id="lastname" placeholder="Lastname" required=""/>
+     </div>
+     <div style="text-align:center" class="form-group">
+        <label  for="email" style="margin:30px;">
+           Email
+        </label>
+           <input type="text" name="email" formControlName="email" [pattern]="emailPattern" ngModule="register1.email"  id="email"  placeholder="Email" required=""/>
+           
+           <!-- </div>
+     <div style="text-align:center" class="form-group"> -->
+        <label  for="phoneno" style="margin:10px;">
+           Phone no.
+        </label>
+           <input type="number" name="phoneno" maxlength="10" formControlName="phoneno" onKeyPress="if(this.value.length==10) return false;"  ngModule="register1.phoneno"  id="phoneno" placeholder="Phone number" required=""/>
+     </div>
+     <div style="text-align:center" class="form-group">
+        <label  for="username" style="margin:10px;">
+           User Name
+        </label>
+           <input type="text" name="username" formControlName="username" ngModule="register1.username"  id="username"  placeholder="User Name" required=""/>
+     <!-- </div>
+     <div style="text-align:center" class="form-group"> -->
+        <label  for="password" style="margin:10px;">
+           Password
+        </label>
+           <input type="password"name="password" formControlName="password" ngModule="register1.password"  id="password"  placeholder="Password" required=""/>
+     </div>
+     <div style="text-align:center" >
+        <button  type="login"  class="alert alert-danger" style="margin:30px;" round="true" class="tbn btn-info"
+        
+        >Submit</button>
+        <a routerLink="/login">Cancel</a>
+      </div> 
+     </form>
+ <!-- </div>
+      </div>
+ </div>
+ </div>
+   </div> -->
+ </div>
