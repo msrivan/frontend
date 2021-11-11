@@ -1,0 +1,17 @@
+node{
+stage('checkout SCM'){
+git branch: 'main',url:'https://github.com/msrivan/frontend.git'
+}
+stage('Install node modules'){
+sh "npm install"
+}
+stage("Test"){
+sh "npm run test-headless"
+}
+stage("Build"){
+sh "npm build --prod"
+}
+stage("copy"){
+sh "cp -a /var/lib/jenkins/workspace/angular-pipeline/dist/frontend/. /var/www/frontend/html/"
+}
+}
